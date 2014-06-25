@@ -6,13 +6,13 @@ require 'utils/json_access'
 require 'utils/pizza'
 
 module Puppet
-  newtype(:salami) do
+  newtype(:ansjovis) do
     include EasyType
     include Utils::JsonAccess
     include Utils::Pizza
 
     desc %q{
-      This resource manages the salami you put on your pizza.
+      This resource manages the ansjovis you use for your pizza
     }
 
     ensurable
@@ -20,7 +20,6 @@ module Puppet
     define_type_methods
 
     parameter :name
-    property  :slices
-
+    property  :amount
   end
 end
