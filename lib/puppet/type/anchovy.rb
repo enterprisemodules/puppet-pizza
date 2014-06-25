@@ -6,13 +6,14 @@ require 'utils/json_access'
 require 'utils/pizza'
 
 module Puppet
-  newtype(:ansjovis) do
+  newtype(:anchovy) do
     include EasyType
     include Utils::JsonAccess
     include Utils::Pizza
 
     desc %q{
-      This resource manages the ansjovis you use for your pizza
+      This resource manages the anchovy
+       you use for your pizza
     }
 
     ensurable

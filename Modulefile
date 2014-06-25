@@ -1,5 +1,5 @@
 name    'hajee-pizza'
-version '0.1.0'
+version '0.1.1'
 source 'http:/www.github.com/hajee/puppet-pizza'
 author 'Bert Hajee'
 license 'Apache License, Version 2.0'
