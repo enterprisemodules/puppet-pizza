@@ -7,7 +7,7 @@ require 'utils/json_access'
 module Puppet
   newtype(:tomato_sauce) do
     include EasyType
-    include ::Utils::JsonAccess
+    include Utils::JsonAccess
 
     desc %q{
       This resource manages the tomato_sauce you put on your pizza.

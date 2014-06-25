@@ -1,8 +1,10 @@
 require 'pathname'
 require 'yaml'
+
 $:.unshift(Pathname.new(__FILE__).dirname.parent.parent)
 $:.unshift(Pathname.new(__FILE__).dirname.parent.parent.parent.parent + 'easy_type' + 'lib')
 require 'easy_type'
+require 'utils/json_access'
 
 module Puppet
   #
@@ -11,7 +13,7 @@ module Puppet
   #
   newtype(:cheese) do
     include EasyType
-    include ::Utils::JsonAccess
+    include Utils::JsonAccess
 
     desc %q{
       This resource manages the cheese you put on your pizza.
