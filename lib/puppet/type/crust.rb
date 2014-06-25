@@ -15,11 +15,11 @@ module Puppet
       This resource manages the crust you use for your pizza
     }
 
-    ensurable
 
     define_type_methods
 
     parameter :name
+    property  :ensure
     property  :size
     property  :type
     property  :dough

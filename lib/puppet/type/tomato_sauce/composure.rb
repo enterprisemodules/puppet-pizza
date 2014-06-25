@@ -7,6 +7,8 @@ newproperty(:composure) do
     :thin
     )
 
+  defaultto :thin
+
   to_translate_to_resource do | raw_resource|
     raw_resource.column_data('composure').downcase.to_sym
   end
