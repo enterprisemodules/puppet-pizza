@@ -7,6 +7,8 @@ module Utils
     include EasyType::Helpers
 
     DATA_FILE = File.expand_path('~/.puppet_data.yaml')
+    PUPPET_META_ATTRIBUTES = [:alias, :audit, :before, :loglevel, :noop, :notify, :require, :schedule, :stage, :subscribe, :tag, :provider]
+
 
     def self.included(parent)
       parent.extend(JsonAccess)
@@ -87,7 +89,7 @@ module Utils
     end
 
     def sanetize(resource)
-      resource.delete_if{|key, vaue| [:provider, :loglevel].include?(key)}
+      resource.delete_if{|key, vaue| PUPPET_META_ATTRIBUTES.include?(key)}
     end
 
     def yaml_data

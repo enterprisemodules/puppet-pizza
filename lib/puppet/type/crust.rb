@@ -15,8 +15,11 @@ module Puppet
       This resource manages the crust you use for your pizza
     }
 
-
     define_type_methods
+
+    on_notify do 
+      Puppet.info "Putting pizza in oven for a reheating"
+    end
 
     parameter :name
     property  :ensure

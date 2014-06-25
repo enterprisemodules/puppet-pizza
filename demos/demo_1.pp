@@ -1,0 +1,1 @@
+class {pizza::large_pepperoni_pan:}

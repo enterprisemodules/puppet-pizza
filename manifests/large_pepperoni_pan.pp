@@ -1,27 +1,41 @@
-class pizza::large_pepperoni_pan
+class pizza::large_pepperoni_pan( 
+  $order_no = undef,
+)
 {
-  crust{'large_wholesome_pan_crust':
+  if $order_no {
+    $order = "${order_no}/"
+  } else {
+    $oder = ''
+  }
+
+  crust{"${order}large_wholesome_pan_crust":
+    ensure    => baked,
     size      => 20,          # 10", 20"
     type      => 'pan',       # thin
     dough     => 'wholesome', # wholesome ore white
   }
 
-  tomato_sauce{'think_cristal':
+  tomato_sauce{"${order}thin_cristal":
+    ensure      => 'present',
     type        => 'cristal',
     composure   => 'thick',
-    amount      => '2',
-    require     => Crust['large_wholesome_pan_crust'],
+    amount      => 5,
+    notify      => Crust["${order}large_wholesome_pan_crust"],
   }
 
-  salami{'extra_salami':
+  salami{"${order}extra_salami":
+    ensure      => 'present',
     slices      => 6,
-    require     => Tomato_sauce['think_cristal'],
+    require     => Tomato_sauce["${order}thin_cristal"],
+    notify      =>  Crust["${order}large_wholesome_pan_crust"], 
   }
 
-  cheese{'mozzarella_thick':
-    type    => 'mozzarella',
-    amount  => '2',
-    require => Salami['extra_salami'],
+  cheese{"${order}mozzarella_thick":
+    ensure      => 'present',
+    type        => 'mozzarella',
+    amount      => '2',
+    require     => Salami["${order}extra_salami"],
+    notify      =>  Crust["${order}large_wholesome_pan_crust"], 
   }
 
 }

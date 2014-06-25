@@ -1,5 +1,6 @@
 newproperty(:amount) do
   include EasyType
+  include EasyType::Mungers::Integer
 
   desc "the type mount of ingredient in gram's to put on your pizza"
 
