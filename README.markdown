@@ -16,11 +16,11 @@
 
 ##Overview
 
-This module contains a couple of Puppet custom types to be used in teaching people what puppet is and how it works. We use the concept of baking a pizza to explain Puppet resources and the order of the resources.
+This module contains a couple of Puppet custom types to be used in teaching people what puppet is and how it works. We use the concept of baking a pizza to explain Puppet resources and the order of the resources. Checkout [this blog post](http://hajee.github.io/2014/06/26/pietros-puppet-pizza-place-1/) if you want to learn Puppet.
 
 ##Module Description
 
-This module contains custom types that can help in learning about puppet. We 've created some types to help Pedro's Puppet Pizza Place. Pedro's place is running like crazy. He actually gets more customers than he can handle. He is now working on a pizza backing robot. However, he needs some (configuration management) tools to tell the robot what to bake if a large pepperoni pan pizza is ordered.
+This module contains custom types that can help in learning about puppet. We 've created some types to help Pietro's Puppet Pizza Place. Pietro's place is running like crazy. He actually gets more customers than he can handle. He is now working on a pizza backing robot. However, he needs some (configuration management) tools to tell the robot what to bake if a large pepperoni pan pizza is ordered.
 
 With the custom types in this module you can instruct the robot to:
 * Create a Pizza Crust
