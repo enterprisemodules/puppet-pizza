@@ -17,9 +17,18 @@ module Puppet
     include Utils::JsonAccess
     include Utils::Pizza
 
-    desc %q{
-      This resource manages the cheese you put on your pizza.
-    }
+    desc <<-'EOT'
+      Add cheese to the pizza or modify the amount of 
+      cheese on your pizza. An example:
+
+        cheese{"extra_cheese":
+          ensure      => 'present',
+          amount      => 2, # gr
+          require     => Tomato_sauce["thin_cristal"],
+          notify      => Crust["large_wholesome_pan_crust"], 
+        }
+
+    EOT
 
     ensurable
 

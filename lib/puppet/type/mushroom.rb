@@ -11,9 +11,18 @@ module Puppet
     include Utils::JsonAccess
     include Utils::Pizza
 
-    desc %q{
-      This resource manages the ansjovis you use for your pizza
-    }
+    desc <<-'EOT'
+      Add mushrooms to the pizza or modify the amount of 
+      mushrooms on your pizza. An example:
+
+        mushroom{"extra_anchovy":
+          ensure      => 'present',
+          amount      => 2, # gr
+          require     => Tomato_sauce["thin_cristal"],
+          notify      => Crust["large_wholesome_pan_crust"], 
+        }
+
+    EOT
 
     ensurable
 

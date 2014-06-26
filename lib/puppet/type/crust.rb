@@ -11,9 +11,17 @@ module Puppet
     include Utils::JsonAccess
     include Utils::Pizza
 
-    desc %q{
-      This resource manages the crust you use for your pizza
-    }
+    desc <<-'EOT'
+      Select the crust for your pizza. An example:
+
+      crust{"large_wholesome_pan_crust":
+        ensure    => baked,
+        size      => 20,          # 10", 20"
+        type      => 'pan',       # thin
+        dough     => 'wholesome', # wholesome ore white
+      }
+
+    EOT
 
     define_type_methods
 

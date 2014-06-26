@@ -11,10 +11,18 @@ module Puppet
     include Utils::JsonAccess
     include Utils::Pizza
 
-    desc %q{
-      This resource manages the anchovy
-       you use for your pizza
-    }
+    desc <<-'EOT'
+      Add anchovy to the pizza or modify the amount of 
+      anchovy on your pizza. An example:
+
+        anchovy{"extra_anchovy":
+          ensure      => 'present',
+          amount      => 2, # gr
+          require     => Tomato_sauce["thin_cristal"],
+          notify      => Crust["large_wholesome_pan_crust"], 
+        }
+
+    EOT
 
     ensurable
 
