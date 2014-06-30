@@ -15,7 +15,7 @@ newproperty(:ensure) do
   end
 
   defaultto do
-    provider.managed? ? :raw : nil
+    @resource.managed? ? :raw : nil
   end
 
   to_translate_to_resource do | raw_resource|
