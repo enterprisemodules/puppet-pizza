@@ -1,7 +1,6 @@
 require 'yaml'
 require 'easy_type'
 
-
 module Utils
   module JsonAccess
     include EasyType::Helpers
@@ -22,6 +21,10 @@ module Utils
       resource
     end
 
+    def delete_yaml
+      File.delete(DATA_FILE)
+    end
+
     def read_yaml_for(type)
       entry = yaml_data_for(type)
       entry.nil? ? [] : entry.collect {|e| InstancesResults[e]}
@@ -38,27 +41,35 @@ module Utils
     end
 
     def modify_in_yaml(type, data)
-      if not yaml_data_for?(type)
-        fail "We expected yaml file #{DATA_FILE} to exist, but it doesn't."
-      else
+      change_yaml_for(type) do
         replace_entry(yaml_data_for(type),data)
       end
-      write_yaml_file
-      nil #
+    end
+
+    def delete_type(type)
+      change_yaml_for(type) do
+        yaml_data[type.to_s] = []
+      end
     end
 
     def delete_from_yaml(type, data)
-      if not yaml_data_for?(type)
-        fail "We expected yaml file #{DATA_FILE} to exist, but it doesn't."
-      else
+      change_yaml_for(type) do
         delete_entry(yaml_data_for(type),data)
       end
-      write_yaml_file
-      nil #
     end
 
 
   private
+
+    def change_yaml_for(type)
+      if not yaml_data_for?(type)
+        fail "We expected yaml file #{DATA_FILE} to exist, but it doesn't."
+      else
+        yield
+      end
+      write_yaml_file
+      nil #
+    end
 
     def delete_entry(set, value)
       set.delete_if {|entry| entry['name'] == value['name']}
