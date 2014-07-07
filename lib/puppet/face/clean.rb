@@ -13,7 +13,7 @@ Puppet::Face.define(:clean, '0.0.1') do
    summary "Clean all piza's from the oven"
    when_invoked do | options |
     ingredient = options.fetch(:ingredient){'all'}
-    Puppet.info "Cleaned all #{ingredient} from oven"
+    Puppet.notice "Cleaned #{ingredient} from oven"
     clean_oven(ingredient)
     nil
    end
