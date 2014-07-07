@@ -1,4 +1,4 @@
-class pizza::large_pepperoni_pan( 
+define pizza::large_pepperoni_pan(
   $order_no = undef,
 )
 {
