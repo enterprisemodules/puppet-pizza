@@ -1,0 +1,19 @@
+{
+  "author": "Bert Hajee",
+  "license": "Enterprise Modules Open Source",
+  "name": "hajee-pizza",
+  "project_page": "https://github.com/hajee/puppet-pizza",
+  "source": "https://github.com/hajee/puppet-pizza",
+  "summary": "Custom types as an example for a learing puppet using Pedro\'s Puppet Pizza Place. ",
+  "version": "0.1.4",
+  "dependencies": [
+    {
+      "name": "hajee/easy_type",
+      "version_requirement": ">= 0.10.1"
+    }
+  ],
+  "description": "Custom types as an example for a learing puppet using Pedro\'s Puppet Pizza Place. ",
+  "tags": [
+    "learning"
+  ]
+}
