@@ -6,13 +6,13 @@ require 'utils/json_access'
 require 'utils/pizza'
 
 module Puppet
-  newtype(:tomato_sauce) do
+  Type.newtype(:tomato_sauce) do
     include EasyType
     include Utils::JsonAccess
     include Utils::Pizza
 
     desc <<-'EOT'
-      Add tomato sauce to the pizza or modify the amount of 
+      Add tomato sauce to the pizza or modify the amount of
       sauce on your pizza. An example:
 
           tomato_sauce{"thin_cristal":

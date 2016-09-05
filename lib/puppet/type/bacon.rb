@@ -6,20 +6,20 @@ require 'utils/json_access'
 require 'utils/pizza'
 
 module Puppet
-  newtype(:bacon) do
+  Type.newtype(:bacon) do
     include EasyType
     include Utils::JsonAccess
     include Utils::Pizza
 
     desc <<-'EOT'
-      Add bacon to the pizza or modify the amount of 
+      Add bacon to the pizza or modify the amount of
       bacon on your pizza. An example:
 
         bacon{"extra_bacon":
           ensure      => 'present',
           slices      => 2,
           require     => Tomato_sauce["thin_cristal"],
-          notify      => Crust["large_wholesome_pan_crust"], 
+          notify      => Crust["large_wholesome_pan_crust"],
         }
 
     EOT

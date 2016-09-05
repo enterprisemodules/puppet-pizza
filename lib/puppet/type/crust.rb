@@ -6,7 +6,7 @@ require 'utils/json_access'
 require 'utils/pizza'
 
 module Puppet
-  newtype(:crust) do
+  Type.newtype(:crust) do
     include EasyType
     include Utils::JsonAccess
     include Utils::Pizza
@@ -25,7 +25,7 @@ module Puppet
 
     define_type_methods
 
-    on_notify do 
+    on_notify do
       Puppet.info "Putting pizza in oven for a reheating"
     end
 
