@@ -4,7 +4,7 @@ newproperty(:slices) do
 
   desc "the number of slices to put on your pizza"
 
-  defaultto 4
+  defaultto(4)
 
   to_translate_to_resource do | raw_resource|
     raw_resource.column_data('slices')
