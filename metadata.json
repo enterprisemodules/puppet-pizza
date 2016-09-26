@@ -5,7 +5,7 @@
   "project_page": "https://github.com/hajee/puppet-pizza",
   "source": "https://github.com/hajee/puppet-pizza",
   "summary": "Custom types as an example for a learing puppet using Pedro\'s Puppet Pizza Place. ",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "dependencies": [
     {
       "name": "hajee/easy_type",
