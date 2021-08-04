@@ -1,8 +1,13 @@
 # History
 
+## 0.3.0
+
+- Update to latest easy_type
+
 ## 0.2.0
 
 - First Enterprise Modules release
+
 ## 0.1.5
 - Added required defaults
 

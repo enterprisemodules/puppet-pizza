@@ -5,7 +5,7 @@
   "project_page": "https://github.com/enterprisemodules/puppet-pizza",
   "source": "https://github.com/enterprisemodules/puppet-pizza",
   "summary": "Custom types as an example for a learing puppet using Pedro's Puppet Pizza Place.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": [
     {
       "name": "enterprisemodules/easy_type",
