@@ -9,7 +9,7 @@
   "dependencies": [
     {
       "name": "enterprisemodules/easy_type",
-      "version_requirement": ">= 2.9.6 < 3.0.0"
+      "version_requirement": ">= 2.29.0 < 3.0.0"
     }
   ],
   "tags": [
