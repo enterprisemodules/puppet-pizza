@@ -1,3 +1,4 @@
+---
 fixtures:
-  repositories:
-    easy_type: git://github.com/hajee/easy_type.git
+  forge_modules:
+    easy_type:  enterprisemodules-easy_type

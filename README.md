@@ -1,6 +1,6 @@
-####Table of Contents
+#### Table of Contents
 
-[![Powered By EasyType](https://raw.github.com/hajee/easy_type/master/powered_by_easy_type.png)](https://github.com/hajee/easy_type)
+[![Enterprise Modules](https://raw.githubusercontent.com/enterprisemodules/public_images/master/banner1.jpg)](https://www.enterprisemodules.com)
 
 
 1. [Overview](#overview)
@@ -14,15 +14,15 @@
     * [OS support](#os-support)
     * [Tests - Testing your configuration](#testing)
 
-##Overview
+## Overview
 
-This module contains a couple of Puppet custom types to be used in teaching people what puppet is and how it works. We use the concept of baking a pizza to explain Puppet resources and the order of the resources. Checkout [this blog post](http://hajee.github.io/2014/06/26/pietros-puppet-pizza-place-1/) if you want to learn Puppet.
+This module contains a couple of Puppet custom types to teach people what Puppet is and how it works. We use the concept of baking a pizza to explain Puppet resources and the order of the resources. Check out [this blog post](https://www.enterprisemodules.com/blog/2014/06/pietros-puppet-pizza-place-1/) if you want to learn Puppet.
 
-##Module Description
+## Module Description
 
-This module contains custom types that can help in learning about puppet. We 've created some types to help Pietro's Puppet Pizza Place. Pietro's place is running like crazy. He actually gets more customers than he can handle. He is now working on a pizza backing robot. However, he needs some (configuration management) tools to tell the robot what to bake if a large pepperoni pan pizza is ordered.
+This module contains custom types that can help in learning about Puppet. We've created some types to help Pietro's Puppet Pizza Place. Pietro's place is running like crazy. He gets more customers than he can handle. He is now working on a pizza backing robot. However, he needs some (configuration management) tools to tell the robot what to bake if a large pepperoni pan pizza is ordered.
 
-With the custom types in this module you can instruct the robot to:
+With the custom types in this module, you can instruct the robot to:
 * Create a Pizza Crust
 * Add tomato Sauce
 * Add Cheese
@@ -31,29 +31,28 @@ With the custom types in this module you can instruct the robot to:
 * Add some anchovy
 * Add some mushrooms
 
-##Setup
+## Setup
 
-###What the pizza module affects
+### What the pizza module affects
 
-The pizza module writes all Pizza resources to ~/.puppet_data.yaml. If you want to start from scratch, just delete the file. Because we use a user specific file. Every user on the system can do this without running into each other.
+The pizza module writes all Pizza resources to ~/.puppet_data.yaml. If you want to start from scratch, just delete the file because we use a user-specific file. Every user on the system can do this without running into each other.
 
-###Setup Requirements
+### Setup Requirements
 
-The pizza module is based on [easy_type](https://github.com/hajee/easy_type). You need to have it installed.
+The pizza module is based on [easy_type](https://forge.puppet.com/modules/enterprisemodules/easy_type). You need to have it installed.
 
 ```
-$ puppet module install hajee/easy_type
-$ puppet module install hajee/pizza
+$ puppet module install enterprisemodules/easy_type
+$ puppet module install enterprisemodules/pizza
 ```
 
-
-##Usage
+## Usage
 
 The module contains the following types:
 
 `crust`, `tomato_sauce`, `salami` , `bacon`, `mushroom`, `anchovy` and `cheese`. Here are a couple of examples on how to use them.
 
-###crust
+### crust
 
 To get started, select a pizza crust. You can specify what dough you want; how large it needs to be in inched. If you prefer a pan pizza, just select type pan. If you want a regular one, just use type regular.
 
@@ -66,14 +65,14 @@ crust {'large_wholesome_pan_crust':
 }
 ```
 
-###tomato_souce
+### tomato_souce
 
-Pizza is no pizza without some delicious tomato sauce. We have a lot of types tomato sauces for you. You can select:
+Pizza is no pizza without some delicious tomato sauce. We have a lot of types of tomato sauces for you. You can select:
 - cristal,
 - tamaris,
 - sampei
 
-If you want **A LOT OF SAUCE** specify a large amount. We also have support for thick and thin composure of the sauce.
+If you want **A LOT OF SAUCE** specify a large amount. We also have support for the thick and thin composure of the sauce.
 
 ```puppet
   tomato_souce{'think_cristal':
@@ -84,9 +83,9 @@ If you want **A LOT OF SAUCE** specify a large amount. We also have support for 
   }
 ```
 
-Because you want the customer to get warm pizza, you add a notify to the sauce and any other ingredients. This means that when you change something, the pizza is put back in the oven toe be reheated.
+Because you want the customer to get warm pizza, you add a notify to the sauce and any other ingredients. This means that when you change something, the pizza is put back in the oven to be reheated.
 
-###salami
+### salami
 
 You need an excuse to drink some extra beer? Select the salami on the pizza.  Select the number of slices you want.
 
@@ -98,7 +97,7 @@ You need an excuse to drink some extra beer? Select the salami on the pizza.  Se
   }
 ```
 
-###bacon
+### bacon
 
 If salami is too spicy, but you want the meat, you can select bacon.
 
@@ -110,7 +109,7 @@ If salami is too spicy, but you want the meat, you can select bacon.
   }
 ```
 
-###anchovy
+### anchovy
 
 If you are more of a fish eater, you can select anchovy for your pizza.
 
@@ -122,7 +121,7 @@ If you are more of a fish eater, you can select anchovy for your pizza.
   }
 ```
 
-###mushrooms
+### mushrooms
 
 For vegetarians, we've got something special. You can select the mushrooms. They might be magical.
 
@@ -134,9 +133,9 @@ For vegetarians, we've got something special. You can select the mushrooms. They
   }
 ```
 
-###cheese
+### cheese
 
-We have a lot of flavor's cheese available. You can select:
+We have a lot of flavor cheese available. You can select:
 - mozzarella,
 - provolone,
 - parmigiano_reggiano,
@@ -153,27 +152,28 @@ Just name your pick.
   }
 ```
 
-##Your own toppings
+## Your own toppings
 
-You are welcom to create your own toppings. Using easy_type it's actually very easy. Just take a look at the bacon custom type for example.
+You are welcom to create your own toppings. Using `easy_type` it's actually very easy. Just take a look at the bacon custom type, for example.
 
-##Limitations
+## Limitations
 
-This module runs on ruby 1.8.7 and higher. We need at least puppet version 2.7. There are no other known limitations.
+This module runs on ruby 1.8.7 and higher. We need at least Puppet version 2.7. There are no other known limitations.
 
-##Development
+## Development
 
 This is an open source projects, and all contributions are welcome. 
 
-###OS support
+### OS support
 
-Currently we have tested:
+Currently, we have tested:
 
 * OSX 10.9
+* Linux
 
-It will probably run on any OS because it doesn't really contain any OS specific stuff.
+It will probably run on any OS because it doesn't contain any OS specific stuff.
 
 
-###Testing
+### Testing
 
 There are no tests implemented. If this starts to be used at a larger scale, we should add them.

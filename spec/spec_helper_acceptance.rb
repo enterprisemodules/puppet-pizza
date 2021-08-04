@@ -40,9 +40,7 @@ oradb::installdb{ '12.1.0.1_Linux-x86-64':
 
 
     hosts.each do |host|
-      on host, puppet('module', 'install', 'puppetlabs/stdlib'), { :acceptable_exit_codes => [0,1] }
-      on host, puppet('module', 'install', 'biemond/oradb'), { :acceptable_exit_codes => [0,1] }
-      on host, puppet('module', 'install', 'hajee/easy_type'), { :acceptable_exit_codes => [0,1] }
+      on host, puppet('module', 'install', 'enterprisemodules/easy_type'), { :acceptable_exit_codes => [0,1] }
 
 
     end
